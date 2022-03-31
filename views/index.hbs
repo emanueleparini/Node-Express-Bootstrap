@@ -1,0 +1,18 @@
+<h1>Welcome to Note List</h1>
+
+{{#each note}}
+
+<div class="card card-body">
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+    <a class="btn btn-primary btn-block mb-3" href="/edit/{{_id}}">Modifica</a> 
+
+    <form action="/lista_note/{{id}}?_method=DELETE" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Cancella">
+    </form>
+</div>
+
+{{else}}
+    <h4>I'm empty.. Please add your first note ;)</h4>
+{{/each}}
